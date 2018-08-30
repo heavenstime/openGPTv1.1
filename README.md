@@ -1,7 +1,7 @@
 # OpenGPTv1
 
 ## Abstract
- * Numerical pattern recogition by GPT related method with kNN. It achieved 99.7% in the experiment with MNIST
+ * Numeral pattern recogition by GPT related method with kNN. It achieved 99.7% in the experiment with MNIST
 
 
 ## Features 
