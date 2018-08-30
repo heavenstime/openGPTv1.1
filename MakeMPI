@@ -1,0 +1,27 @@
+CC = mpicc
+CFLAGS = -O3 -Wall
+#CFLAGS = -g -Wall
+LFLAGS = -lm
+PROGRAMS = OpenGPTv1MPI
+OBJECTS  = gptMpiMain.o multiMatch.o gpt.o utility.o eval.o 
+
+.SUFFIXES: .c .o
+
+all:    $(PROGRAMS)
+
+$(PROGRAMS): $(OBJECTS)
+	$(CC) -o $(PROGRAMS) $(OBJECTS) $(LFLAGS) 
+
+.c.o:
+	$(CC) $(CFLAGS) -c $<
+
+.PHONY: clean
+clean: 
+	rm -f *.o $(PROGRAMS)
+
+eval.o: parameters.h eval.h gpt.h utility.h
+gpt.o:  parameters.h eval.h gpt.h utility.h
+gptMpiMain.o:   parameters.h eval.h gpt.h multiMatch.h 
+multiMatch.o:   parameters.h eval.h gpt.h multiMatch.h utility.h
+utility.o:      parameters.h eval.h gpt.h utility.h
+

@@ -1,0 +1,6 @@
+gpt01.localdomain cpu=2
+gpt02.localdomain cpu=2
+gpt03.localdomain cpu=2
+gpt04.localdomain cpu=2
+gpt05.localdomain cpu=2
+
